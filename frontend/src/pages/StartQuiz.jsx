@@ -104,7 +104,6 @@
 
 // // // // export default StartQuiz;
 
-
 // // // import React, { useState } from "react";
 // // // import Modal from "../components/Modal";
 // // // import Quiz from "../components/Quiz";
@@ -200,7 +199,6 @@
 // // // };
 
 // // // export default StartQuiz;
-
 
 // // import React, { useState } from "react";
 // // import Modal from "../components/Modal";
@@ -421,6 +419,8 @@ import Modal from "../components/Modal";
 import Quiz from "../components/Quiz";
 import defaultQuestions from "../data/DefaultQuestions";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ModernDropdown = ({ options, selected, setSelected, placeholder }) => {
   const [open, setOpen] = useState(false);
@@ -515,6 +515,20 @@ const StartQuiz = () => {
           >
             Start Quiz
           </button>
+          <div className="w-full mt-5 flex justify-center lg:justify-center sm:justify-start sm:pl-2 mb-6">
+            <Link to="/studentdashboard">
+              <motion.button
+                className="px-4 mr-1.5 py-3.5 rounded-xl cursor-pointer w-[315px]
+               bg-gradient-to-r from-blue-400 to-blue-500 
+               hover:from-blue-500 hover:to-blue-600 
+               text-white font-semibold shadow-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Back
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </Modal>
     );
